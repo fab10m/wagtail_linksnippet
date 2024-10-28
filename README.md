@@ -1,11 +1,12 @@
 # Wagtail Link Snippet
 
-This project provides a custom implementation for adding link buttons in Wagtail’s rich text editor to link specific snippets within the Wagtail admin interface.
+This package provides a custom implementation for adding link buttons in Wagtail’s rich text editor to link specific snippets within the Wagtail admin interface.
 
 
 ## Overview
 
 The package integrates with Wagtail’s `ChooserViewSet` ([Wagtail documentation](https://docs.wagtail.org/en/v6.2.2/extending/generic_views.html#chooserviewset)).
+The package works only if the snippet has the get_absolute_url method implemented.
 
 
 ## Installation and Setup
