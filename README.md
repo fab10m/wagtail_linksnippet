@@ -2,6 +2,7 @@
 
 This package provides a custom implementation for adding link buttons in Wagtail’s rich text editor to link specific snippets within the Wagtail admin interface.
 
+![How to use it](wagtail_linksnippet.gif)
 
 ## Overview
 
