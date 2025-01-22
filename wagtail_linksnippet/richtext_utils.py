@@ -16,7 +16,6 @@ def register_model_feature_(features, model_config):
     model_name_ = model_config['model_name']
     type_ = model_config['type']
     icon = model_config.get('icon', 'link-external')
-    js_file = 'wagtail_linksnippet/js/modelChooser.js'
 
     class ModelLinkHandler(GenericLinkHandler):
         identifier = feature_name_
@@ -37,7 +36,7 @@ def register_model_feature_(features, model_config):
     features.register_editor_plugin(
         'draftail',
         feature_name_,
-        EntityFeature(control, js=[static(js_file)])
+        EntityFeature(control)
     )
 
     def model_entity_decorator(props):
@@ -79,11 +78,14 @@ def make_editor_js(model_config):
 
         js = format_html(
             '''
+            <script src="{js_file}"></script>
             <script type="text/javascript">
                 window.modelChooserConfigs = window.modelChooserConfigs || [];
                 window.modelChooserConfigs.push({config});
+                safeInitModelChooser();
             </script>
             ''',
+            js_file=static("wagtail_linksnippet/js/modelChooser.js"),
             config=mark_safe(js_config)
         )
         return js
