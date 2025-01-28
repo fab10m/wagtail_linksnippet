@@ -21,7 +21,7 @@ setup(
         'Operating System :: OS Independent',
     ],
     install_requires=[
-        'wagtail>=6.0',
+        'wagtail>=6.3',
         'django>=4.2'
     ],
     package_data={
